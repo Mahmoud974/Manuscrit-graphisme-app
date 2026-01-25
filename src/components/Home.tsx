@@ -58,7 +58,7 @@ export default function Home() {
   }, [isVisible]);
 
   return (
-    <section className="relative md:h-[130vh] h-auto lg:mb-0 mb-12 overflow-hidden text-white flex flex-col">
+    <section className="relative md:h-[100vh] h-auto lg:mb-0 mb-12 overflow-hidden text-white flex flex-col">
       <video
         autoPlay
         loop
@@ -75,7 +75,7 @@ export default function Home() {
       <div className="relative z-10 flex flex-col justify-between h-full">
         <Navbar />
 
-        <div className="container mx-auto text-left px-6 md:-mt-22" ref={sectionRef}>
+        <div className="container mx-auto text-left px-6 md:-mt-12" ref={sectionRef}>
           {/* Titre - mobile centré, desktop intact */}
           <p className="lg:text-5xl text-4xl md:text-6xl font-bold leading-tight mb-4 block md:inline mx-auto md:mx-0 max-w-2xl md:max-w-none text-center md:text-left">
             Créez Votre Identité Visuelle <br />
