@@ -27,6 +27,8 @@ const getContrastTextColor = (bgColor: string): string => {
   return luminance > 0.5 ? "#000000" : "#ffffff";
 };
 
+const arrowProjects = " cursor-pointer absolute left-0 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-orange-500 transition text-white p-2 -full z-10"
+
 export default function Page() {
   const params = useParams<{ slug: string }>();
   const slug = params.slug;
@@ -221,7 +223,7 @@ export default function Page() {
               </ul>
             </div>
 
-        
+            {/* Colonne droite : image principale desktop (4ème image, carrée) */}
             <div className="hidden md:flex flex-col items-center">
               <div
                 className="w-full max-w-md aspect-square cursor-pointer hover:opacity-90 transition overflow-hidden"
@@ -266,14 +268,14 @@ export default function Page() {
 
               <button
                 onClick={prevSlide}
-                className="absolute left-0 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-orange-500 transition text-white p-2 -full z-10"
+                className=" cursor-pointer absolute left-0 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-orange-500 transition text-white p-2 -full z-10"
                 aria-label="Image précédente"
               >
                 ←
               </button>
               <button
                 onClick={nextSlide}
-                className="absolute right-0 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-orange-500 transition text-white p-2 -full z-10"
+                className=" cursor-pointer absolute right-0 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-orange-500 transition text-white p-2 -full z-10"
                 aria-label="Image suivante"
               >
                 →
@@ -353,7 +355,7 @@ export default function Page() {
               e.stopPropagation();
               prevModalSlide();
             }}
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-orange-500 transition text-white p-4 -full z-50 text-2xl"
+            className={arrowProjects}
             aria-label="Image précédente"
           >
             ←
@@ -394,7 +396,7 @@ export default function Page() {
               e.stopPropagation();
               nextModalSlide();
             }}
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-orange-500 transition text-white p-4 -full z-50 text-2xl"
+            className={arrowProjects}
             aria-label="Image suivante"
           >
             →

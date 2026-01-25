@@ -5,7 +5,7 @@ import Home from '@/components/Home'
 import Portfolios from '@/components/Portfolios'
 import Services from '@/components/Services'
 import Social from '@/components/Social'
-import React from 'react'
+ 
  
 
 export default function page() {

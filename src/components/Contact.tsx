@@ -17,7 +17,7 @@ export default function Contact() {
     setStatus('');
 
     try {
-      const response = await fetch(process.env.NEXT_PUBLIC_LAMBDA_EMAIL_RESEND, {
+      const response = await fetch(process.env.NEXT_PUBLIC_LAMBDA_EMAIL_RESEND!, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -43,7 +43,7 @@ export default function Contact() {
     }
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e:any) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value

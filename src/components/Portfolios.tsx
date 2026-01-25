@@ -9,7 +9,7 @@ import "swiper/css/navigation";
 import Link from "next/link";
 import { portfolioProjects } from "@/app/db/portfolioData";
 
-export default function Portfolios() {
+export default function Portfolio() {
   return (
     <section
       className="relative min-h-screen bg-cover bg-center bg-no-repeat -mt-12 pt-46 pb-24 text-white"
@@ -22,7 +22,7 @@ export default function Portfolios() {
       <div className="relative z-10 container mx-auto text-center px-4">
         <h2 className="text-5xl font-bold mb-8 inline-block">
           <span className="bg-orange-500 px-6 py-2 inline-block transform -rotate-2">
-            Portfolios
+            Portfolio
           </span>
         </h2>
 
