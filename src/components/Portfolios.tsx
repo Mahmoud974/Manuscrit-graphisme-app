@@ -19,14 +19,14 @@ export default function Portfolio() {
     >
       <div className="absolute inset-0 bg-black/30"></div>
 
-      <div className="relative z-10 container mx-auto text-center px-4">
-        <h2 className="text-5xl font-bold mb-8 inline-block">
-          <span className="bg-orange-500 px-6 py-2 inline-block transform -rotate-2">
+      <div className="relative z-10 container mx-auto text-center px-4 ">
+        <h2 className="lg:text-5xl text-2xl bg-orange-500 px-6 py-2 inline-block transform -rotate-2 font-bold mb-8  ">
+          
             Portfolio
-          </span>
+      
         </h2>
 
-        <p className="text-lg max-w-4xl mx-auto text-orange-500 mb-16">
+        <p className="lg:text-lg  max-w-4xl mx-auto text-orange-500 mb-16">
         {`  Chaque projet commence par une idée, évolue à travers des choix visuels forts,
           et s'accomplit dans la création d'une identité marquante.`}
         </p>

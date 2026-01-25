@@ -6,7 +6,7 @@ export default function Social() {
     <Link
       href="https://www.instagram.com/manuscritgraphisme/"
       target="_blank"
-      className="group relative h-96 flex justify-center items-center text-center text-white bg-cover bg-center bg-no-repeat cursor-pointer"
+      className="group relative lg:h-96 h-42 flex justify-center items-center text-center text-white bg-cover bg-center bg-no-repeat cursor-pointer"
       style={{
         backgroundImage: "url('/images/background-contact.png')",
       }}
@@ -16,7 +16,7 @@ export default function Social() {
 
        
       <div className="relative z-10">
-        <p className="text-4xl md:text-5xl font-bold  leading-snug">
+        <p className="lg:text-4xl  md:text-5xl font-bold  leading-snug">
           Suivez-moi sur <br />
           <span className=" ">@ManuscritGraphisme</span>
         </p>

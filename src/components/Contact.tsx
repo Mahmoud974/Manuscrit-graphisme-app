@@ -15,9 +15,17 @@ export default function Contact() {
     e.preventDefault();
     setLoading(true);
     setStatus('');
-
+  
     try {
-      const response = await fetch(process.env.NEXT_PUBLIC_LAMBDA_EMAIL_RESEND!, {
+      const apiUrl:any = process.env.NEXT_PUBLIC_LAMBDA_EMAIL_RESEND;
+      
+      if (!apiUrl) {
+        setStatus('Configuration manquante ❌');
+        setLoading(false);
+        return;
+      }
+  
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -28,7 +36,7 @@ export default function Contact() {
           message: formData.message
         })
       });
-
+  
       if (response.ok) {
         setStatus('Message envoyé avec succès ! ✅');
         setFormData({ nom: '', email: '', message: '' });
@@ -53,7 +61,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative flex flex-col items-center justify-center text-white py-32 px-6 bg-cover bg-center bg-no-repeat"
+      className="relative flex flex-col items-center justify-center text-white lg:py-32 py-16 px-6 bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage: "url('/images/background-contact.png')",
       }}
@@ -61,13 +69,11 @@ export default function Contact() {
       <div className="absolute inset-0 bg-black/70"></div>
 
       <div className="relative z-10 flex flex-col items-center text-center">
-        <h2 className="text-5xl font-bold mb-8 inline-block">
-          <span className="bg-orange-600 px-6 py-2 inline-block transform -rotate-2">
+      <h2 className="lg:text-5xl text-2xl bg-orange-500 px-6 py-2 inline-block transform -rotate-2 font-bold mb-8  ">
             Contact
-          </span>
         </h2>
 
-        <p className="text-center text-orange-600 text-lg max-w-5xl mb-10 leading-relaxed">
+        <p className="text-center text-orange-600 lg:text-lg max-w-5xl mb-10 leading-relaxed">
       {`    Chaque projet naît d'un besoin concret, évolue grâce à des solutions visuelles adaptées,
           et s'accomplit dans la réussite de vos objectifs.`}
         </p>
@@ -116,7 +122,7 @@ export default function Contact() {
               disabled={loading}
               className="bg-orange-600 hover:bg-purple-800 text-white font-bold py-3 px-12 text-lg transition-all duration-300 shadow-lg hover:shadow-purple-900/40 disabled:opacity-50"
             >
-              {loading ? 'Envoi en cours...' : 'Envoyer le message'}
+              {loading ? 'Envoi en cours...' : 'Envoyer'}
             </button>
           </div>
         </form>

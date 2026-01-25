@@ -38,15 +38,17 @@ export default function FAQ() {
 
      
       <section
-        className="relative -mt-46 min-h-screen bg-cover bg-center bg-no-repeat text-white flex flex-col items-center   sm:py-32 px-4"
+        className="relative lg:-mt-46 min-h-screen bg-cover bg-center bg-no-repeat text-white flex flex-col items-center   sm:py-32 px-4"
         style={{ backgroundImage: "url('/images/background-grey.png')" }}
       >
         {/* Titre principal */}
         <div className="text-center mb-16 mt-20 sm:mt-32">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4">
-            Foire aux questions
-          </h1>
-          <p className="text-gray-300 text-lg sm:text-xl max-w-2xl mx-auto">
+        <h2 className="lg:text-5xl text-2xl bg-orange-500 px-6 py-2 inline-block transform -rotate-2 font-bold mb-8  ">
+          
+          FAQ
+        
+      </h2>
+          <p className="text-gray-300 lg:text-lg sm:text-xl max-w-2xl mx-auto">
             Voici les réponses aux questions les plus fréquentes à propos de mes services.
           </p>
         </div>

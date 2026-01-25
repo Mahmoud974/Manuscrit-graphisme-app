@@ -1,5 +1,5 @@
 "use client"
-import React, { useState, useEffect } from 'react'
+import   { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from "@/components/ui/button"
@@ -37,6 +37,7 @@ export default function Navbar() {
             height={260}
             quality={100}
             priority
+            className='w-42 lg:w-full'
           />
         </Link>
 
@@ -96,6 +97,7 @@ export default function Navbar() {
               width={350}
               height={350}
               quality={100}
+              className='w-42 lg:w-full'
             />
           </Link>
 

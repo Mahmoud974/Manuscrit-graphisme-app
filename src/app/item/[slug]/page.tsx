@@ -108,7 +108,7 @@ export default function Page() {
         >
           {/* Fil d'Ariane */}
           <nav className="text-sm -mb-10 relative z-10 mt-48 sm:mt-60 w-full flex justify-start container">
-            <div className="pl-2 sm:pl-0">
+            <div className="pl-2 mt-12 lg:mt-0 sm:pl-0">
               <Link
                 href="/"
                 className="text-orange-500 hover:underline font-medium"
@@ -120,7 +120,7 @@ export default function Page() {
                 href="/portfolio"
                 className="text-orange-500 hover:underline font-medium"
               >
-                Portfolios
+                Portfolio
               </Link>
               <span className="text-gray-500"> &gt; </span>
               <span className="text-gray-200">{project.title}</span>
