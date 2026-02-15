@@ -80,7 +80,7 @@ export const portfolioProjects = [
     {
         id: 3,
         slug: "ibniyahya",
-        title: "Ibni yahya",
+        title: "Ibniyahya",
         subtitle: "Identité visuelle – Spirituel · Éducatif · Raffiné",
         tools: ["Adobe Illustrator"],
         projectTypes: ["Logo", "Identité visuelle", "Support pédagogique"],

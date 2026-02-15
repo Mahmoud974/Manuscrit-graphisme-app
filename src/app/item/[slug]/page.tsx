@@ -103,12 +103,12 @@ export default function Page() {
         <Navbar />
 
         <section
-          className="relative -mt-52 flex flex-col items-center justify-center text-white px-4 sm:px-6 bg-cover bg-center bg-no-repeat min-h-screen"
+          className="relative -mt-60 flex flex-col items-center justify-center text-white px-4 sm:px-6 bg-cover bg-center bg-no-repeat min-h-screen"
           style={{ backgroundImage: "url('/images/background-grey.png')" }}
         >
           {/* Fil d'Ariane */}
-          <nav className="text-sm -mb-10 relative z-10 mt-48 sm:mt-60 w-full flex justify-start container">
-            <div className="pl-2 mt-12 lg:mt-0 sm:pl-0">
+          <nav className="text-sm   -mb-10 relative z-10 mt-56 sm:mt-60 w-full flex justify-start container">
+            <div className="pl-2    lg:mt-12 mt-10 sm:pl-0">
               <Link
                 href="/"
                 className="text-orange-500 hover:underline font-medium"

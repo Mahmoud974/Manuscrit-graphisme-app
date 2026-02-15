@@ -23,13 +23,13 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`relative w-full z-50 transition-colors duration-500 ${
+      className={`relative w-full z-50 transition-colors duration-500  ${
         menuOpen ? 'bg-black' : 'bg-transparent'
       }`}
     >
-      <div className="container mx-auto flex justify-between items-center py-4 px-4 md:px-8">
+      <div className="container mx-auto  flex justify-between items-center  px-4 md:px-8">
         {/* Logo */}
-        <Link href='/' className="flex items-center">
+        <Link href='/' className="flex   items-center">
           <Image
             src="/images/logo.png"
             alt="Logo"
@@ -37,12 +37,12 @@ export default function Navbar() {
             height={260}
             quality={100}
             priority
-            className='w-42 lg:w-full'
+            className='w-42  lg:w-full'
           />
         </Link>
 
         {/* Menu Desktop */}
-        <ul className="hidden md:flex space-x-8 text-base">
+        <ul className="hidden  md:flex space-x-8 text-base">
           {navLinks.map(({ href, label }) => {
             const isActive = pathname === href
             return (

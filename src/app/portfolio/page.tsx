@@ -68,8 +68,18 @@ export default function Portfolio() {
     <>
       <Navbar />
       <section
-        className="relative -mt-46 min-h-screen bg-cover bg-center bg-no-repeat text-white flex flex-col items-center py-24 sm:py-32 px-4"
-        style={{ backgroundImage: "url('/images/background-grey.png')" }}
+        className="relative -mt-60 min-h-screen text-white flex flex-col items-center py-24 sm:py-32 px-4 overflow-x-hidden"
+        style={{
+          width: "100vw",
+          maxWidth: "100vw",
+          marginLeft: "calc(-50vw + 50%)",
+          marginRight: "calc(-50vw + 50%)",
+          backgroundImage: "url('/images/background-grey.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundColor: "#1b1b1b",
+        }}
       >
         {/* Titre */}
         <div className="text-center mb-16 mt-20 sm:mt-32">
@@ -116,7 +126,7 @@ export default function Portfolio() {
           </div>
         </div>
 
-        {/* Carousel Mobile / Grille Desktop */}
+    
         {isMobile ? (
           <div className="w-full max-w-md mx-auto mb-24 px-4">
             <div className="relative">
@@ -197,7 +207,7 @@ export default function Portfolio() {
                 key={project.id}
                 className="bg-[#1b1b1b]/80 overflow-hidden shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
               >
-                <Link href={`/item/${project.title.toLowerCase().replace(/\s+/g, '-')}`}>
+                <Link href={`/item/${project.slug.toLowerCase().replace(/\s+/g, '-')}`}>
                   <div className="relative w-full h-64 sm:h-72 overflow-hidden group">
                     <Image
                       src={project.mainImage}
