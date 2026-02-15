@@ -11,6 +11,7 @@ export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    const el = sectionRef.current;
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -22,12 +23,12 @@ export default function Home() {
       { threshold: 0.4 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    if (el) {
+      observer.observe(el);
     }
 
     return () => {
-      if (sectionRef.current) observer.unobserve(sectionRef.current);
+      if (el) observer.unobserve(el);
     };
   }, []);
 
@@ -58,13 +59,13 @@ export default function Home() {
   }, [isVisible]);
 
   return (
-    <section className="relative md:h-[100vh] h-auto lg:mb-0 mb-12 overflow-hidden text-white flex flex-col">
+    <section className="relative min-h-[100vh] md:min-h-[100vh] h-auto lg:mb-0 mb-12 overflow-hidden text-white flex flex-col md:flex-col">
       <video
         autoPlay
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover min-h-[100vh]"
       >
         <source src="/images/background-video.mp4" type="video/mp4" />
         Votre navigateur ne supporte pas la vidéo HTML5.
@@ -72,12 +73,12 @@ export default function Home() {
 
       <div className="absolute inset-0 bg-black/50"></div>
 
-      <div className="relative z-10 flex flex-col justify-between h-full">
+      <div className="relative z-10 flex flex-col justify-between min-h-[100vh] md:min-h-[100vh] py-6 md:py-8 lg:py-0">
         <Navbar />
 
-        <div className="container mx-auto text-left px-6 md:-mt-12" ref={sectionRef}>
-          {/* Titre - mobile centré, desktop intact */}
-          <p className="lg:text-5xl text-4xl md:text-6xl font-bold leading-tight mb-4 block md:inline mx-auto md:mx-0 max-w-2xl md:max-w-none text-center md:text-left">
+        <div className="container mx-auto text-left px-4 sm:px-6 md:px-8 lg:px-6 md:-mt-4 lg:-mt-12" ref={sectionRef}>
+          {/* Titre - tailles progressives : mobile → tablette → desktop */}
+          <p className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 block md:inline mx-auto md:mx-0 max-w-2xl md:max-w-none text-center md:text-left">
             Créez Votre Identité Visuelle <br />
             ou un{" "}
             <span className="bg-orange-500 px-3 py-1 transform">
@@ -87,52 +88,52 @@ export default function Home() {
             <br />Graphisme & Web Design
           </p>
 
-          {/* Description - mobile centré, desktop intact */}
-          <p className="text-lg md:text-2xl text-gray-200 max-w-4xl mx-auto md:mx-0 text-center md:text-left">
+          {/* Description */}
+          <p className="text-lg md:text-xl lg:text-2xl text-gray-200 max-w-4xl mx-auto md:mx-0 text-center md:text-left">
             Infographiste, je crée des sites web sur mesure
             <br className="hidden md:block" />
             en cohérence avec votre identité visuelle.
           </p>
 
-          {/* Stats - EXACTEMENT COMME L'ORIGINAL DESKTOP + mobile amélioré */}
-          <div className="flex flex-col md:flex-row justify-start items-start text-left mt-6">
-            <div className="md:pr-6 pb-12 md:pb-32">
-              <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-orange-500 leading-none mb-0 text-center md:text-left">
+          {/* Stats - centrés sur mobile/tablette, alignés à gauche sur desktop */}
+          <div className="flex flex-col md:grid md:grid-cols-3 md:gap-x-6 md:gap-y-8 lg:flex lg:flex-row lg:gap-x-0 justify-center items-center md:justify-items-center lg:justify-start lg:items-start text-center lg:text-left mt-6 md:mt-8">
+            <div className="pb-10 md:pb-0 lg:pr-6 lg:pb-32 w-full max-w-xs md:max-w-none">
+              <h3 className="text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-orange-500 leading-none mb-0 text-center lg:text-left">
                 +{experience}
               </h3>
-              <p className="uppercase tracking-wide font-semibold text-orange-500 mb-1 text-center md:text-left">
+              <p className="uppercase tracking-wide font-semibold text-orange-500 mb-1 text-center lg:text-left">
                 ANNÉES Exp.
               </p>
-              <p className="text-gray-300 text-sm text-center md:text-left">
+              <p className="text-gray-300 text-sm text-center lg:text-left">
                 Des années à transformer des<br/> visuels percutants.
               </p>
             </div>
 
-            <div className="hidden md:block h-28 border-l border-slate-100 mx-6"></div>
+            <div className="hidden lg:block h-28 border-l border-slate-100 mx-6 shrink-0"></div>
 
-            <div className="md:px-0 pb-12 md:pb-32">
-              <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-orange-500 leading-none mb-0 text-center md:text-left">
+            <div className="pb-10 md:pb-0 lg:px-0 lg:pb-32 w-full max-w-xs md:max-w-none">
+              <h3 className="text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-orange-500 leading-none mb-0 text-center lg:text-left">
                 +{projects}
               </h3>
-              <p className="uppercase tracking-wide font-semibold text-orange-500 mb-1 text-center md:text-left">
+              <p className="uppercase tracking-wide font-semibold text-orange-500 mb-1 text-center lg:text-left">
                 Projets Réalisés
               </p>
-              <p className="text-gray-300 text-sm text-center md:text-left">
+              <p className="text-gray-300 text-sm text-center lg:text-left">
                 Sites web, identités visuelles,<br/>
                 logos et supports de communication.
               </p>
             </div>
 
-            <div className="hidden md:block h-28 border-l border-slate-100 mx-6"></div>
+            <div className="hidden lg:block h-28 border-l border-slate-100 mx-6 shrink-0"></div>
 
-            <div className="md:pl-0 pb-12 md:pb-32">
-              <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-orange-500 leading-none mb-0 text-center md:text-left">
+            <div className="pb-12 md:pb-0 lg:pl-0 lg:pb-32 w-full max-w-xs md:max-w-none">
+              <h3 className="text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-orange-500 leading-none mb-0 text-center lg:text-left">
                 {clients}%
               </h3>
-              <p className="uppercase tracking-wide font-semibold text-orange-500 mb-1 text-center md:text-left">
+              <p className="uppercase tracking-wide font-semibold text-orange-500 mb-1 text-center lg:text-left">
                 Clients Satisfaits
               </p>
-              <p className="text-gray-300 text-sm text-center md:text-left">
+              <p className="text-gray-300 text-sm text-center lg:text-left">
                 Des projets menés avec soin<br/>
                 et exigence professionnelle.
               </p>

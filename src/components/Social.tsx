@@ -1,6 +1,5 @@
 import Link from "next/link";
-import React from "react";
-//images/background-contact.png
+
 export default function Social() {
   return (
     <Link

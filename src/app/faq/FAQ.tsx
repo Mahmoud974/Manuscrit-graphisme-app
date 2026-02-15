@@ -38,8 +38,8 @@ export default function FAQ() {
 
      
       <section
-        className="relative lg:-mt-46 min-h-screen bg-cover bg-center bg-no-repeat text-white flex flex-col items-center   sm:py-32 px-4"
-        style={{ backgroundImage: "url('/images/background-grey.png')" }}
+        className="relative lg:-mt-46 min-h-screen bg-cover bg-center bg-no-repeat text-white flex flex-col items-center sm:py-32 px-4"
+        id="FAQ" style={{ backgroundImage: "url('/images/background-grey.png')" }}
       >
         {/* Titre principal */}
         <div className="text-center mb-16 mt-20 sm:mt-32">
