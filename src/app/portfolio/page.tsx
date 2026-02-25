@@ -83,7 +83,7 @@ export default function Portfolio() {
       >
         {/* Titre */}
         <div className="text-center mb-16 mt-20 sm:mt-32">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl mt-18 font-extrabold mb-6">
             Portfolio
           </h1>
 

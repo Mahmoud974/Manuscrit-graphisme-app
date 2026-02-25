@@ -98,7 +98,7 @@ export const portfolioProjects = [
           "/images/portfolios/ibniyahya/bag.png",
         ],
       
-        mainImage: "/images/portfolios/ibniyahya/logo-interface.png",
+        mainImage: "/images/portfolios/ibniyahya/interface.png",
       },  
       {
         id: 4,
